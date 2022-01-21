@@ -2,11 +2,11 @@
 # Dynamic Programming: Segmented Least Squares
 
 The following is the list of team members:\
-S.No	 ID No	  Name
-1.	2017B2A71604H	  Pranav V Grandhi
-2.	2017B3A70878H	  Rahul R Shevade
-3.	2017B3A70740H	  Vamshi Kasam
-4.	2017B3A71048H	  Shanmukh Kali Prasad
+
+1.	Pranav V Grandhi
+2.	Rahul R Shevade
+3.	Vamshi Kasam
+4.	Shanmukh Kali Prasad
 
 ## Introduction:
 
