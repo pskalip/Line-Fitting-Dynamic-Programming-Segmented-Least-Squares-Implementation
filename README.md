@@ -1,7 +1,7 @@
 
 # Dynamic Programming: Segmented Least Squares
 
-The following is the list of team members:
+The following is the list of team members:\
 S.No	 ID No	  Name
 1.	2017B2A71604H	  Pranav V Grandhi
 2.	2017B3A70878H	  Rahul R Shevade
@@ -43,35 +43,35 @@ As the penalty value increases, we observe an increase in the error. The number 
 
 ## Time Taken
 
-input1.txt – 0.000681s
-input2.txt – 0.000479s
-input3.txt – 0.000486s
-input4.txt – 0.000595s
-input5.txt – 0.000817s
-input6.txt – 0.002044s
-input7.txt – 0.001115s
-input8.txt – 0.000864s
-input9.txt – 0.001931s
-input10.txt – 0.002296s
-input11.txt – 0.128989s
-input12.txt – 0.052519s
+input1.txt – 0.000681s\
+input2.txt – 0.000479s\
+input3.txt – 0.000486s\
+input4.txt – 0.000595s\
+input5.txt – 0.000817s\
+input6.txt – 0.002044s\
+input7.txt – 0.001115s\
+input8.txt – 0.000864s\
+input9.txt – 0.001931s\
+input10.txt – 0.002296s\
+input11.txt – 0.128989s\
+input12.txt – 0.052519s\
 input13.txt – 0.105718s
 
 ## Memory Taken
 
-input1.txt – 0.859375 kB
-input2.txt – 0.859375 kB
-input3.txt – 0.859375 kB
-input4.txt – 3.28125 kB
-input5.txt – 3.28125 kB
-input6.txt – 19.92188 kB
-input7.txt – 19.92188 kB
-input8.txt – 19.92188 kB
-input9.txt – 78.90625 kB
-input10.txt – 7820.313 kB
-input11.txt – 7820.313 kB
-input12.txt – 7820.313 kB
-input13.txt – 7820.313 kB
+input1.txt – 0.859375 kB\
+input2.txt – 0.859375 kB\
+input3.txt – 0.859375 kB\
+input4.txt – 3.28125 kB\
+input5.txt – 3.28125 kB\
+input6.txt – 19.92188 kB\
+input7.txt – 19.92188 kB\
+input8.txt – 19.92188 kB\
+input9.txt – 78.90625 kB\
+input10.txt – 7820.313 kB\
+input11.txt – 7820.313 kB\
+input12.txt – 7820.313 kB\
+input13.txt – 7820.313 kB\
 input14.txt – 9.84375 kB
 
 
