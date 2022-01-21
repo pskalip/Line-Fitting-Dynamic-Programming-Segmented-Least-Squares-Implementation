@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<head>
+	<style>
+		body
+		{
+			color: white;
+		}
+	</style>
+</head>
+<html>
+<body style="background-color: black">
+	<TITLE>Segmented Least Squares</TITLE>
+	<H1 style="font-size: 45px;">Dynamic Programming: Segmented Least Squares</H1>
+	<p>The following is the list of team members:</p>
+	<table width="342">
+	<tbody>
+	<tr>
+	<td width="41">
+	<p><strong>S.No</strong></p>
+	</td>
+	<td width="129">
+	<p><strong>&ensp;ID No</strong></p>
+	</td>
+	<td width="172">
+	<p><strong>&ensp;&ensp;Name</strong></p>
+	</td>
+	</tr>
+
+	<tr>
+	<td width="41">
+	<p>1.</p>
+	</td>
+	<td width="129">
+	<p>&ensp;2017B2A71604H</p>
+	</td>
+	<td width="172">
+	<p>&ensp;&ensp;Pranav V Grandhi</p>
+	</td>
+	</tr>
+
+	<tr>
+	<td width="41">
+	<p>2.</p>
+	</td>
+	<td width="129">
+	<p>&ensp;2017B3A70878H</p>
+	</td>
+	<td width="172">
+	<p>&ensp;&ensp;Rahul R Shevade</p>
+	</td>
+	</tr>
+
+	<tr>
+	<td width="41">
+	<p>3.</p>
+	</td>
+	<td width="129">
+	<p>&ensp;2017B3A70740H</p>
+	</td>
+	<td width="172">
+	<p>&ensp;&ensp;Vamshi Kasam</p>
+	</td>
+	</tr>
+
+	<tr>
+	<td width="41">
+	<p>4.</p>
+	</td>
+	<td width="129">
+	<p>&ensp;2017B3A71048H</p>
+	</td>
+	<td width="172">
+	<p>&ensp;&ensp;Shanmukh Kali Prasad</p>
+	</td>
+	</tr>
+	</tbody>
+	</table>
+
+<strong><p style="font-size: 25px;text-decoration: underline;">Introduction:</p></strong>
+<p>The problem statement is- given a set of points, find a sequence of lines that minimises a function f(x), where f(x) = E + cL and-</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; E= sum of squared errors in each segment</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; L= the number of lines in the sequence</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c= Penalty for using each line segment</p>
+<p>This approach helps us solve a multi-objective problem of accuracy and parsimony with a single function.</p>
+<p>&nbsp;</p>
+<strong><p style="font-size: 25px;text-decoration: underline;">Approach to the Problem:</p></strong>
+<p>Let OPT(j) denote the minimum cost for points p1, p2, &hellip;, pj. Let e(i, j) denote the minimum squared error for points pi, pi+1, &hellip;, pj. The crucial observation is that the last point pj for some subproblem OPT(j) belongs to a single segment in the optimal partition, and that segment begins at some earlier point pi. Thus, if we knew OPT(i-1), we could compute OPT(j). This leads to the following recursion:</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OPT(j) = min<sub>1 &le; i &le; j</sub>(e(i,j) + C + OPT[i-1])</p>
+<p>&nbsp;</p>
+<strong><p style="font-size: 25px;text-decoration: underline;">Discussion:</p></strong>
+<p>Generally seen in the linear regression problem, the best fit line is obtained through a series of derivatives finally resulting in a slope intercept form where -</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a (slope) = &Sigma;( xi &ndash; X)*&Sigma;(yi-Y)/&Sigma;((xi-X)^2)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b (y-intercept) = Y &ndash; aX</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; where X and Y are means of x and y respectively.</p>
+<p>This is a problem approached with dynamic programming. While the earlier approach suggests a time complexity of O(n^3), pre-computing the summations of the terms of the error i.e &Sigma;(y^2), &Sigma;(xy), &Sigma;(x^2) etc, reduces the complexity significantly to O(n^2) (our implementation does this). Space complexity of the algorithm is O(n^2) due to the error matrix.</p>
+<p>The algorithm is prevented from using too many line segments to fit the data points with the help of the penalty term, &lsquo;C&rsquo;- which increases the total error.&nbsp;</p>
+<p>&nbsp;</p>
+<strong><p style="font-size: 25px;text-decoration: underline;">Issues in coding:</p></strong>
+<p>As mentioned earlier, decreasing the time complexity required the making of an array to store all the precomputed values (prefix sums). We have implemented using the C++ language. The STL library was used to implement many structures. Visualization for large test cases is not very feasible as plotting greater than 500 points fills the whole plot completely. As the test cases get larger, the comprehensibility of the segments decreases rapidly. Henceforth, we checked the correctness of the algorithm for small cases, while visualizing them. Since visualization libraries are easier to use in python, the visualization was implemented in python.</p>
+<p>&nbsp;</p>
+<strong><p style="font-size: 25px;text-decoration: underline;">Analysis Based on Penalty Values</p></strong>
+<p>As the penalty value increases, we observe an increase in the error. The number of lines are directly proportional to the penalty value because, penalty value is the cost of adding a new line. When the penalty is zero, the optimal solution is formed by the points themselves i.e each point is a line. As the penalty increases, the number of lines tend towards one.</p>
+
+<p>Click <a href="test_cases.html" target="_blank" style="color: magenta;text-decoration: none;	">here</a> to view the testcases and their plots</p>
+
+
+<strong><p style="font-size: 25px;text-decoration: underline;">Time Taken</p></strong>
+<p>input1.txt &ndash; 0.000681s</p>
+<p>input2.txt &ndash; 0.000479s</p>
+<p>input3.txt &ndash; 0.000486s</p>
+<p>input4.txt &ndash; 0.000595s</p>
+<p>input5.txt &ndash; 0.000817s</p>
+<p>input6.txt &ndash; 0.002044s</p>
+<p>input7.txt &ndash; 0.001115s</p>
+<p>input8.txt &ndash; 0.000864s</p>
+<p>input9.txt &ndash; 0.001931s</p>
+<p>input10.txt &ndash; 0.002296s</p>
+<p>input11.txt &ndash; 0.128989s</p>
+<p>input12.txt &ndash; 0.052519s</p>
+<p>input13.txt &ndash; 0.105718s</p>
+<p>input14.txt &ndash; 0.0013s</p>
+
+<strong><p style="font-size: 25px;text-decoration: underline;">Memory Taken</p></strong>
+<p>input1.txt &ndash; 0.859375 kB</p>
+<p>input2.txt &ndash; 0.859375 kB</p>
+<p>input3.txt &ndash; 0.859375 kB</p>
+<p>input4.txt &ndash; 3.28125 kB</p>
+<p>input5.txt &ndash; 3.28125 kB</p>
+<p>input6.txt &ndash; 19.92188 kB</p>
+<p>input7.txt &ndash; 19.92188 kB</p>
+<p>input8.txt &ndash; 19.92188 kB</p>
+<p>input9.txt &ndash; 78.90625 kB</p>
+<p>input10.txt &ndash; 7820.313 kB</p>
+<p>input11.txt &ndash; 7820.313 kB</p>
+<p>input12.txt &ndash; 7820.313 kB</p>
+<p>input13.txt &ndash; 7820.313 kB</p>
+<p>input14.txt &ndash; 9.84375 kB</p>
+
+</body>
+</html>
