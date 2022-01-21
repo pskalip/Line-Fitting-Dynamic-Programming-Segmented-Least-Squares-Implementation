@@ -20,10 +20,10 @@ The following is the list of team members:
 
 ## Introduction:
 
-The problem statement is- given a set of points, find a sequence of lines that minimises a function f(x), where f(x) = E + cL and-
-	E= sum of squared errors in each segment
-	L= the number of lines in the sequence
-	c= Penalty for using each line segment
+The problem statement is- given a set of points, find a sequence of lines that minimises a function f(x), where **f(x) = E + cL** and- \
+		E= sum of squared errors in each segment \
+		L= the number of lines in the sequence \
+		c= Penalty for using each line segment\
 This approach helps us solve a multi-objective problem of accuracy and parsimony with a single function.
 
 ## Approach to the Problem:
