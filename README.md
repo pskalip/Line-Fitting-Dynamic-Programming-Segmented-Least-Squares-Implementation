@@ -12,7 +12,7 @@ The following is the list of team members:
 
 1) Navigate to the source file directory.
 2) _Note: The test case in consideration has to be in the same directory as the C++ source code files._
-3) Compile the source file using the command:** g++ sourcecode.cpp**
+3) Compile the source file using the command:  **g++ sourcecode.cpp**
 4) Execute the file and input the file names for input and output files respectively.
 5) To visualize the test cases and corresponding outputs, make the necessary changes in the Visualization Jupyter Notebook.
 6) For a more convenient web view of the report and analysis, dowload the entire folder and open the DAA2.html file in a browser of your choice.
