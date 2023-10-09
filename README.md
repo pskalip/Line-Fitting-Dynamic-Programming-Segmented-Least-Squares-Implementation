@@ -3,10 +3,10 @@
 
 The following is the list of team members:
 
-1.	Pranav V Grandhi
+1.	Shanmukh Kali Prasad
 2.	Rahul R Shevade
 3.	Vamshi Kasam
-4.	Shanmukh Kali Prasad
+4.	Pranav V Grandhi
 
 ## How To Run
 
